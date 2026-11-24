@@ -183,7 +183,68 @@ mark.tbd{background:var(--tbd);color:var(--tbd-ink);border-radius:4px;padding:0 
 .acts .sp{flex:1}
 .empty{border:1px dashed var(--line);border-radius:var(--r);padding:28px;text-align:center;color:var(--muted)}
 .log li{font-size:13.5px}
+/* 四維切換器 */
+.sw{border-top:1px solid var(--line);background:var(--sunk)}
+.swr{display:flex;flex-wrap:wrap;gap:6px 18px;padding-block:8px;align-items:center}
+.swg{display:flex;align-items:center;gap:4px;flex-wrap:wrap;min-width:0}
+.swl{font-size:12px;font-weight:700;color:var(--muted);margin-right:2px;letter-spacing:.06em}
+.swb{border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:2px 10px;font-size:13px;display:inline-flex;gap:5px;align-items:center}
+.swb i{font-style:normal;font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+.swb.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.swb.on i{color:var(--bg);opacity:.75}
+.meta{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:6px;font-size:12.5px;color:var(--muted)}
+.mt{display:inline-flex;gap:6px;align-items:center}
+.mt b{font-weight:700;color:var(--fg);opacity:.7}
+.ev{display:inline-block;background:var(--accent-soft);color:var(--accent);border-radius:4px;padding:0 6px;font-size:12px;margin-right:3px}
+/* 內容地圖 */
+.map{margin-bottom:18px}
+.map .tw{overflow-x:auto}
+.maph{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.maph h3{margin:0}
+.map table{border-collapse:collapse;width:100%;font-size:14px}
+.map th{text-align:left;padding:8px 10px;font-weight:700;background:var(--sunk);white-space:nowrap}
+.map tbody th{background:transparent;border-top:1px solid var(--line)}
+.map tbody th small{display:block;font-weight:400;color:var(--muted);font-size:11.5px}
+.map td{border-top:1px solid var(--line);padding:6px}
+.mc{width:100%;min-width:84px;text-align:left;border-radius:8px;border:1px solid var(--line);background:var(--surface);padding:6px 10px;font-size:12.5px;color:var(--muted)}
+.mc b{font-family:var(--f-mono);font-size:18px;color:var(--fg);margin-right:4px}
+.mc.gap{background:var(--bad-soft);color:var(--bad);border-color:transparent;font-weight:700}
+.mc.dr{background:var(--warn-soft);color:var(--warn);border-color:transparent}
+.mc:hover{border-color:var(--accent)}
+/* 流程檢視 */
+.legend{display:flex;gap:6px 12px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:10px;flex-wrap:wrap}
+.stages{display:grid;grid-template-columns:repeat(calc(var(--n) * 2 - 1),auto);grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:1fr;gap:8px;align-items:start}
+.stages .sarr{align-self:center;color:var(--muted);font-size:20px;flex:none}
+.stages{display:flex}
+.stages .stg{flex:1;min-width:0}
+.stg{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;min-width:0}
+.stg.common{margin-top:14px}
+.stg header{display:flex;gap:10px;align-items:center;margin-bottom:6px}
+.stg header>div{flex:1;min-width:0}
+.stg h3{margin:0;font-size:16px}
+.stg small{color:var(--muted);font-size:12px}
+.stg .no{width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-family:var(--f-mono);font-weight:600;flex:none}
+.fl{list-style:none;margin:0;padding:0}
+.fl.cols{columns:3 240px;column-gap:20px}
+.fl li{display:flex;flex-direction:column;gap:2px;padding:6px 0;border-top:1px solid var(--line);break-inside:avoid;font-size:14px}
+.fl li:first-child{border-top:0}
+.fl a{display:flex;gap:8px;align-items:baseline;color:var(--fg);text-decoration:none}
+.fl a:hover .t{text-decoration:underline}
+.fl .dot{transform:translateY(-1px)}
+.fl .evs{padding-left:17px;display:flex;gap:3px;flex-wrap:wrap}
+.fl .none{color:var(--muted);font-size:13px}
+fieldset.ck{border:1px solid var(--line);border-radius:8px;padding:6px 10px;margin:0;display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center}
+fieldset.ck legend{font-size:12.5px;color:var(--muted);padding:0 4px}
+fieldset.ck label{flex-direction:row;align-items:center;gap:5px;color:var(--fg);font-size:14px}
+fieldset.ck .newev{gap:6px;color:var(--muted);font-size:12.5px}
+fieldset.ck .newev input{width:200px;max-width:100%}
+.toc{top:calc(env(safe-area-inset-top,0px) + 170px)}
+.group,.card{scroll-margin-top:190px}
 @media (max-width:860px){
+  header.top{position:static}
+  .stages{flex-direction:column}
+  .stages .sarr{transform:rotate(90deg);align-self:center}
+  .stages .stg{width:100%}
   .hero,.two{grid-template-columns:1fr}
   .pillars,.hcols{grid-template-columns:1fr}
   .layout{grid-template-columns:1fr}
@@ -204,6 +265,7 @@ mark.tbd{background:var(--tbd);color:var(--tbd-ink);border-radius:4px;padding:0 
     </div>
     <nav class="tabs" id="tabs" aria-label="分頁"></nav>
   </div>
+  <div class="sw" id="sw"></div>
 </header>
 <main class="wrap" id="main"><div class="empty">載入中…</div></main>
 <div id="modal"></div>
@@ -216,20 +278,29 @@ const PILLARS = {
   plan:{name:"落地推動", short:"落地", q:"讓它真的發生：時程、工具、KPI、分工、版本治理", c:"--plan"}
 };
 const TABS = [
-  ["overview","總覽"],["std","遵守標準"],["sop","執行細節"],["edu","教育訓練"],["plan","落地推動"],["issues","待確認議題"],["handover","交接清單"],["log","更新紀錄"]
+  ["overview","總覽"],["flow","流程檢視"],["std","遵守標準"],["sop","執行細節"],["edu","教育訓練"],["plan","落地推動"],["issues","待確認議題"],["handover","交接清單"],["log","更新紀錄"]
 ];
 const STATUS = ["定案","討論中","待確認","草稿"];
 const ISTATUS = ["待討論","已決議","暫緩"];
 const SCOPES = ["全部","長租","短租"];
-const AUDS = ["全部","外勤","內勤","主管"];
+const STAGES = ["入住前","入住中","入住後"];
+const STAGE_DESC = {"入住前":"招租、帶看、入住點交","入住中":"報修、巡檢、固定回報","入住後":"退房點交、押金、恢復房況"};
+const AUD_LIST = ["外勤房管師","內勤行政","中階主管","處長"];
+const EVENT_BASE = ["回報","緊急","報修","點交","押金"];
+const SWITCH_TABS = ["overview","flow","std","sop","edu","plan","handover"];
+/* 舊資料相容：aud 字串 → auds 陣列 */
+const AUD_OLD = {"外勤":["外勤房管師"],"內勤":["內勤行政"],"主管":["中階主管","處長"]};
+function auds(x){ if(Array.isArray(x.auds)) return x.auds; return AUD_OLD[x.aud]||[]; }
+function stages(x){ return Array.isArray(x.stages)?x.stages:[]; }
+function events(x){ return Array.isArray(x.events)?x.events:[]; }
+function allEvents(){ return [...new Set([...EVENT_BASE,...S.items.flatMap(events)])]; }
 const LEVELS = ["必讀","熟練","進階"];
 const LEVEL_DESC = {"必讀":"到職第 1 週","熟練":"第 1 個月內","進階":"第 3 個月起"};
 const ROLES = ["執行長","處長","長租中階主管","短租中階主管","內勤房管師","外勤房管師","其他"];
 
 const S = { items:[], issues:[], notes:[], log:[], members:{}, uid:null, me:null, canWrite:null,
   loaded:{items:false,issues:false}, slow:false, err:"", tab:"overview",
-  f:{q:"",scope:"全部",aud:"全部",status:"全部"}, ifilter:"未決", openNotes:new Set(), drafts:{},
-  ho:{aud:"外勤",scope:"全部"} };
+  f:{q:"",scope:"全部",stage:"全部",aud:"全部",ev:"全部",status:"全部"}, ifilter:"未決", openNotes:new Set(), drafts:{} };
 const REPO="firewave1111/openhouse-service-sop", BRANCH="main", DATA="data.json", TKEY="ohsop-token";
 let DATAV=null; let SHA=null;
 
@@ -403,6 +474,7 @@ function vOverview(){
       <div class="stat"><b style="color:var(--bad)">${open}</b><span>待決議題</span></div>
     </div>
   </section>
+  ${vMap()}
   <div class="pillars">${pcard("std")}${pcard("sop")}${pcard("edu")}</div>
   <div class="arrowline">▲ 三層都靠下面這一層推動與更新 ▲</div>
   <a class="found" href="#plan" style="--pc:var(--plan)"><b>落地推動</b><span class="q" style="color:var(--muted);font-size:13px">${PILLARS.plan.q}</span><span class="chip">${S.items.filter(x=>x.pillar==="plan").length} 張</span></a>
@@ -419,10 +491,32 @@ function vOverview(){
     <ul class="mini log">${S.log.slice(0,6).map(l=>`<li><span class="w">${ts(l.at)}</span><span class="t">${whoEl(l.by)} ${esc(l.act)}「${esc(l.title)}」</span><span class="chip">${esc(l.kind||"")}</span></li>`).join("")||'<li><span class="t">還沒有人修改過內容</span></li>'}</ul>
   </div>`;
 }
+/* 四維切換：空白＝通用，任何選項都會顯示 */
+function swMatch(x,skip){
+  const f=S.f;
+  if(skip!=="scope" && f.scope!=="全部" && x.scope && x.scope!=="全部" && x.scope!==f.scope) return false;
+  if(skip!=="stage" && f.stage!=="全部" && stages(x).length && !stages(x).includes(f.stage)) return false;
+  if(skip!=="aud" && f.aud!=="全部" && auds(x).length && !auds(x).includes(f.aud)) return false;
+  if(skip!=="ev" && f.ev!=="全部" && !events(x).includes(f.ev)) return false;
+  return true;
+}
+function swActive(){ const f=S.f; return [f.scope,f.stage,f.aud,f.ev].some(v=>v!=="全部"); }
+function renderSwitch(){
+  const el=$("#sw");
+  if(!SWITCH_TABS.includes(S.tab)){ el.innerHTML=""; el.hidden=true; return; }
+  el.hidden=false;
+  const hit=(x,k,v)=> k==="scope"?(!x.scope||x.scope==="全部"||x.scope===v):
+     k==="stage"?(!stages(x).length||stages(x).includes(v)):
+     k==="aud"?(!auds(x).length||auds(x).includes(v)):events(x).includes(v);
+  const cnt=(k,v)=>S.items.filter(x=>swMatch(x,k)&&(v==="全部"||hit(x,k,v))).length;
+  const grp=(k,label,opts,allLabel)=>`<div class="swg" role="group" aria-label="${label}"><span class="swl">${label}</span>${["全部",...opts].map(v=>{
+      const on=S.f[k]===v; const n=`<i>${cnt(k,v)}</i>`;
+      return `<button class="swb${on?" on":""}" data-sw="${k}" data-v="${esc(v)}" aria-pressed="${on}">${esc(v==="全部"?allLabel:v)}${n}</button>`}).join("")}</div>`;
+  el.innerHTML=`<div class="wrap swr">${grp("scope","大項目",["長租","短租"],"長租＋短租")}${grp("stage","流程",STAGES,"全流程")}${grp("aud","對象",AUD_LIST,"所有人")}${grp("ev","事件",allEvents(),"全部事件")}${swActive()?`<button class="ghost" data-act="swreset">清除切換</button>`:""}</div>`;
+}
 function matches(x){
   const f=S.f;
-  if(f.scope!=="全部" && x.scope && x.scope!=="全部" && x.scope!==f.scope) return false;
-  if(f.aud!=="全部" && x.aud && x.aud!=="全部" && x.aud!==f.aud) return false;
+  if(!swMatch(x)) return false;
   if(f.status!=="全部" && x.status!==f.status) return false;
   if(f.q){ const q=f.q.toLowerCase(); if(!((x.title||"")+(x.body||"")+(x.group||"")).toLowerCase().includes(q)) return false; }
   return true;
@@ -439,27 +533,56 @@ function notesBlock(target){
 function cardHtml(x){
   const nb=notesBlock("item:"+x.id);
   const tags=[`<span class="chip st-${esc(x.status)}">${esc(x.status||"草稿")}</span>`];
-  if(x.scope&&x.scope!=="全部") tags.push(`<span class="chip lv">${esc(x.scope)}</span>`);
-  if(x.aud&&x.aud!=="全部") tags.push(`<span class="chip lv">${esc(x.aud)}</span>`);
   if(x.level) tags.push(`<span class="chip lv">${esc(x.level)}</span>`);
+  const meta=[
+    `<span class="mt"><b>大項目</b>${esc(x.scope&&x.scope!=="全部"?x.scope:"長租＋短租")}</span>`,
+    `<span class="mt"><b>流程</b>${esc(stages(x).length?stages(x).join("、"):"全流程")}</span>`,
+    `<span class="mt"><b>對象</b>${esc(auds(x).length?auds(x).join("、"):"所有人")}</span>`,
+    events(x).length?`<span class="mt"><b>事件</b>${events(x).map(e=>`<span class="ev">${esc(e)}</span>`).join("")}</span>`:""].join("");
   return `<article class="card" id="c-${esc(x.id)}"><div class="ch"><h4>${inl(x.title)}</h4><div class="tags">${tags.join("")}${canEdit()?`<button class="ghost" data-act="edit" data-id="${esc(x.id)}">編輯</button>`:""}</div></div>
+    <div class="meta">${meta}</div>
     <div class="cb rt">${rich(x.body)}</div>
     <div class="cf"><span>${nb.btn}</span><span>${x.at?`最後更新 ${ts(x.at)} · ${whoEl(x.by)}`:"初稿內容"}</span></div>${nb.body}</article>`;
 }
 function vPillar(p){
   const P=PILLARS[p]; const g=groupsOf(p);
   const fil=`<div class="filters"><label for="fq" style="position:absolute;left:-9999px">搜尋</label><input type="search" id="fq" placeholder="搜尋標題或內容…" value="${esc(S.f.q)}">
-    <label for="fs" style="position:absolute;left:-9999px">適用</label><select id="fs">${SCOPES.map(s=>`<option ${s===S.f.scope?"selected":""} value="${s}">${s==="全部"?"長租＋短租":s}</option>`).join("")}</select>
-    <label for="fa" style="position:absolute;left:-9999px">對象</label><select id="fa">${AUDS.map(s=>`<option ${s===S.f.aud?"selected":""} value="${s}">${s==="全部"?"所有對象":s}</option>`).join("")}</select>
     <label for="fst" style="position:absolute;left:-9999px">狀態</label><select id="fst">${["全部",...STATUS].map(s=>`<option ${s===S.f.status?"selected":""} value="${s}">${s==="全部"?"所有狀態":s}</option>`).join("")}</select></div>`;
   let body="", toc="";
   for(const [k,v] of g){ const vis=v.filter(matches); if(!vis.length) continue;
     const gid="g-"+p+"-"+[...g.keys()].indexOf(k);
     toc+=`<a href="#${p}" data-jump="${gid}"><span>${esc(k)}</span><span>${vis.length}</span></a>`;
     body+=`<section class="group" id="${gid}"><h3>${esc(k)}</h3><div class="cards">${vis.map(cardHtml).join("")}</div></section>`; }
-  if(!body) body = S.items.some(x=>x.pillar===p) ? '<div class="empty">沒有符合篩選條件的卡片</div>' : `<div class="empty">這一層還沒有內容。${canEdit()?"按右上「＋ 新增卡片」寫第一張。":""}</div>`;
+  if(!body) body = S.items.some(x=>x.pillar===p) ? '<div class="empty">這個切換組合下沒有卡片。可以按上方「清除切換」，或新增一張。</div>' : `<div class="empty">這一層還沒有內容。${canEdit()?"按右上「＋ 新增卡片」寫第一張。":""}</div>`;
   return `<div style="--pc:var(${P.c})"><div class="phead"><div><h2 class="pt" style="color:var(--pc)">${P.name}</h2><p class="lead">${P.q}</p></div>${canEdit()?`<button class="pri" data-act="new" data-p="${p}">＋ 新增卡片</button>`:""}</div>
     ${fil}<div class="layout"><nav class="toc" aria-label="段落">${toc}</nav><div>${body}</div></div></div>`;
+}
+/* 內容地圖：流程 × 分類，套用目前的大項目／對象／事件切換 */
+function vMap(){
+  const base=S.items.filter(x=>x.pillar!=="plan" && swMatch(x,"stage"));
+  const rows=[["全流程共通",x=>!stages(x).length],...STAGES.map(s=>[s,x=>stages(x).includes(s)])];
+  const cols=["std","sop","edu"];
+  const cell=(r,p)=>{const v=base.filter(x=>x.pillar===p&&r[1](x)); const draft=v.length&&v.every(x=>x.status==="草稿");
+    const st=r[0]==="全流程共通"?"全部":r[0];
+    return `<td><button class="mc${v.length?(draft?" dr":""):" gap"}" data-map="${p}" data-st="${esc(st)}">${v.length?`<b>${v.length}</b>${draft?"只有草稿":"張"}`:"缺"}</button></td>`};
+  const lab=[S.f.scope!=="全部"?S.f.scope:"",S.f.aud!=="全部"?S.f.aud:"",S.f.ev!=="全部"?"事件："+S.f.ev:""].filter(Boolean).join("・")||"全部內容";
+  return `<div class="panel map"><div class="maph"><h3>內容地圖：流程 × 分類</h3><span class="chip">${esc(lab)}</span></div>
+   <div class="tw"><table><thead><tr><th>流程</th>${cols.map(p=>`<th style="color:var(${PILLARS[p].c})">${PILLARS[p].name}</th>`).join("")}</tr></thead>
+   <tbody>${rows.map(r=>`<tr><th scope="row">${esc(r[0])}<small>${esc(STAGE_DESC[r[0]]||"每個階段都適用")}</small></th>${cols.map(p=>cell(r,p)).join("")}</tr>`).join("")}</tbody></table></div>
+   <p class="lead" style="font-size:12.5px">點格子直接看內容。紅色「缺」代表這個階段還沒有寫，是下一輪要補的地方。用上方切換器換「大項目／對象／事件」，地圖會跟著變。</p></div>`;
+}
+/* 流程檢視：入住前 → 入住中 → 入住後，跨分類一次看 */
+function vFlow(){
+  const vis=S.items.filter(x=>x.pillar!=="plan" && matches({...x}) );
+  const ord=x=>["std","sop","edu"].indexOf(x.pillar)*1000+(x.order||0);
+  const mini=x=>`<li><a href="#${x.pillar}" data-go="${esc(x.id)}"><span class="dot" style="background:var(${PILLARS[x.pillar].c})"></span><span class="t">${inl(x.title)}</span></a><span class="evs">${events(x).map(e=>`<span class="ev">${esc(e)}</span>`).join("")}${x.status!=="定案"?`<span class="chip st-${esc(x.status)}">${esc(x.status)}</span>`:""}</span></li>`;
+  const common=vis.filter(x=>!stages(x).length).sort((a,b)=>ord(a)-ord(b));
+  const stageList=S.f.stage==="全部"?STAGES:[S.f.stage];
+  return `<div><div class="phead" style="--pc:var(--accent)"><div><h2 class="pt">流程檢視</h2><p class="lead">照房源的生命週期看：每個階段要守什麼標準、照什麼流程做、怎麼說。用上方切換器挑大項目、對象、事件。</p></div></div>
+   <div class="legend"><span class="dot" style="background:var(--std)"></span>遵守標準 <span class="dot" style="background:var(--sop)"></span>執行細節 <span class="dot" style="background:var(--edu)"></span>教育訓練</div>
+   <div class="stages" style="--n:${stageList.length}">${stageList.map((s,i)=>{const v=vis.filter(x=>stages(x).includes(s)).sort((a,b)=>ord(a)-ord(b));
+     return `<section class="stg"><header><span class="no">${STAGES.indexOf(s)+1}</span><div><h3>${s}</h3><small>${STAGE_DESC[s]}</small></div><span class="chip">${v.length}</span></header><ul class="fl">${v.map(mini).join("")||'<li class="none">這個階段還沒有內容</li>'}</ul></section>`}).join('<div class="sarr" aria-hidden="true">→</div>')}</div>
+   <section class="stg common"><header><span class="no">∞</span><div><h3>全流程共通</h3><small>每個階段都要遵守的原則與時效</small></div><span class="chip">${common.length}</span></header><ul class="fl cols">${common.map(mini).join("")||'<li class="none">無</li>'}</ul></section></div>`;
 }
 function vIssues(){
   const f=S.ifilter;
@@ -474,14 +597,13 @@ function vIssues(){
 }
 function vHandover(){
   const done=lsGet("ho-done",{});
-  const pick=S.items.filter(x=>x.pillar!=="plan" && (!x.aud||x.aud==="全部"||x.aud===S.ho.aud) && (S.ho.scope==="全部"||!x.scope||x.scope==="全部"||x.scope===S.ho.scope) && x.status!=="草稿")
+  const pick=S.items.filter(x=>x.pillar!=="plan" && swMatch(x) && x.status!=="草稿")
     .sort((a,b)=>["std","sop","edu"].indexOf(a.pillar)-["std","sop","edu"].indexOf(b.pillar)||(a.order||0)-(b.order||0));
   const total=pick.length, got=pick.filter(x=>done[x.id]).length;
   const col=l=>{const v=pick.filter(x=>(x.level||"熟練")===l);
     return `<div class="hcol"><h3>${l}</h3><div class="sub">${LEVEL_DESC[l]} · ${v.length} 項</div><ul class="hl">${v.map(x=>`<li><label><input type="checkbox" data-ho="${esc(x.id)}" ${done[x.id]?"checked":""}><span class="dot" style="background:var(${PILLARS[x.pillar].c});margin-top:8px"></span><span>${inl(x.title)}${x.status!=="定案"?` <span class="chip st-${esc(x.status)}">${esc(x.status)}</span>`:""}</span></label><a href="#${x.pillar}" data-go="${esc(x.id)}">看內容</a></li>`).join("")||'<li style="color:var(--muted)">無</li>'}</ul></div>`};
   return `<div><div class="phead" style="--pc:var(--accent)"><div><h2 class="pt">交接清單</h2><p class="lead">依對象自動挑出要讀的卡片，分成必讀／熟練／進階。前任與接手人一起逐項看過就打勾（勾選只存在你這台裝置）。</p></div></div>
-  <div class="filters"><label>對象 <select id="hoa">${["外勤","內勤","主管"].map(a=>`<option ${a===S.ho.aud?"selected":""}>${a}</option>`).join("")}</select></label>
-  <label>適用 <select id="hos">${SCOPES.map(a=>`<option value="${a}" ${a===S.ho.scope?"selected":""}>${a==="全部"?"長租＋短租":a}</option>`).join("")}</select></label>
+  <div class="filters">${S.f.aud==="全部"?`<span class="notice" style="margin:0">請先在上方「對象」選擇交接的職務（例如 外勤房管師）</span>`:`<span class="chip lv">交接對象：${esc(S.f.aud)}</span>`}
   <span class="chip">完成 ${got} / ${total}</span>${got?`<button class="ghost" data-act="horeset">清除勾選</button>`:""}
   <span class="chip" style="gap:6px"><span class="dot" style="background:var(--std)"></span>標準 <span class="dot" style="background:var(--sop)"></span>執行 <span class="dot" style="background:var(--edu)"></span>訓練</span></div>
   <div class="bar"><i style="width:${total?Math.round(got/total*100):0}%"></i></div>
@@ -493,7 +615,7 @@ function vLog(){
   <div class="panel"><ul class="mini log">${S.log.map(l=>`<li><span class="w" style="font-family:var(--f-mono)">${ts(l.at)}</span><span class="t">${whoEl(l.by)} ${esc(l.act)}「${esc(l.title)}」</span><span class="chip">${esc(l.kind||"")}</span></li>`).join("")||'<li><span class="t">還沒有異動紀錄</span></li>'}</ul></div></div>`;
 }
 function render(){
-  renderTabs();
+  renderTabs(); renderSwitch();
   const m=$("#main"); const y=window.scrollY;
   let h="";
   if(S.err) h+=`<div class="notice">${esc(S.err)}</div>`;
@@ -501,7 +623,7 @@ function render(){
   if(S.uid && S.canWrite===false) h+=`<div class="notice" style="background:var(--sunk);color:var(--muted)">你已登入，但還不是 ${esc(REPO)} 的協作者，目前只能閱讀。請擁有者在 GitHub 把你加為協作者。</div>`;
   const t=S.tab;
   if(!S.loaded.items && !S.err && !S.items.length) h+=`<div class="empty">正在讀取手冊內容…</div>`;
-  else h+= t==="overview"?vOverview(): PILLARS[t]?vPillar(t): t==="issues"?vIssues(): t==="handover"?vHandover(): vLog();
+  else h+= t==="overview"?vOverview(): t==="flow"?vFlow(): PILLARS[t]?vPillar(t): t==="issues"?vIssues(): t==="handover"?vHandover(): vLog();
   const ae=document.activeElement; const aid=ae&&ae.id; const sel=ae&&ae.selectionStart;
   m.innerHTML=h;
   if(aid){const n=document.getElementById(aid); if(n){n.focus(); try{ if(sel!=null) n.setSelectionRange(sel,sel);}catch(e){}}}
@@ -511,7 +633,8 @@ function render(){
 /* ---------- editors ---------- */
 function closeModal(){ $("#modal").innerHTML=""; }
 function openItem(id,pillar){
-  const x=id?S.items.find(i=>i.id===id):{pillar,status:"討論中",scope:"全部",aud:"全部",level:"熟練",group:"",title:"",body:"",order:(Math.max(0,...S.items.filter(i=>i.pillar===pillar).map(i=>i.order||0))+10)};
+  const f=S.f;
+  const x=id?S.items.find(i=>i.id===id):{pillar,status:"討論中",scope:f.scope,stages:f.stage!=="全部"?[f.stage]:[],auds:f.aud!=="全部"?[f.aud]:[],events:f.ev!=="全部"?[f.ev]:[],level:"熟練",group:"",title:"",body:"",order:(Math.max(0,...S.items.filter(i=>i.pillar===pillar).map(i=>i.order||0))+10)};
   if(!x) return;
   const groups=[...new Set(S.items.filter(i=>i.pillar===x.pillar).map(i=>i.group))];
   const opt=(arr,v)=>arr.map(a=>`<option ${a===v?"selected":""}>${a}</option>`).join("");
@@ -523,9 +646,11 @@ function openItem(id,pillar){
     <label>段落（群組）<input id="e-group" list="glist" value="${esc(x.group)}" placeholder="例：A 回報時效"><datalist id="glist">${groups.map(g=>`<option value="${esc(g)}">`).join("")}</datalist></label>
     <label>狀態<select id="e-status">${opt(STATUS,x.status)}</select></label>
     <label>排序（小的在前）<input id="e-order" type="number" value="${esc(x.order||0)}"></label>
-    <label>適用<select id="e-scope">${opt(SCOPES,x.scope||"全部")}</select></label>
-    <label>對象<select id="e-aud">${opt(AUDS,x.aud||"全部")}</select></label>
+    <label>大項目<select id="e-scope">${SCOPES.map(a=>`<option value="${a}" ${a===(x.scope||"全部")?"selected":""}>${a==="全部"?"長租＋短租":a}</option>`).join("")}</select></label>
     <label>學習等級<select id="e-level">${opt(LEVELS,x.level||"熟練")}</select></label>
+    <fieldset class="w4 ck"><legend>流程（都不勾＝全流程）</legend>${STAGES.map(s=>`<label><input type="checkbox" name="e-st" value="${s}" ${stages(x).includes(s)?"checked":""}>${s}</label>`).join("")}</fieldset>
+    <fieldset class="w4 ck"><legend>對象（都不勾＝所有人）</legend>${AUD_LIST.map(s=>`<label><input type="checkbox" name="e-au" value="${s}" ${auds(x).includes(s)?"checked":""}>${s}</label>`).join("")}</fieldset>
+    <fieldset class="w4 ck"><legend>事件</legend>${allEvents().map(s=>`<label><input type="checkbox" name="e-ev" value="${esc(s)}" ${events(x).includes(s)?"checked":""}>${esc(s)}</label>`).join("")}<label class="newev">新增事件<input id="e-newev" placeholder="例：客訴（多個用逗號分隔）"></label></fieldset>
    </div>
    <div class="ed"><label style="display:flex;flex-direction:column;gap:4px;font-size:12.5px;color:var(--muted)">內容<textarea id="e-body" rows="18">${esc(x.body)}</textarea></label><div><div style="font-size:12.5px;color:var(--muted);margin-bottom:4px">預覽</div><div class="pv rt" id="e-pv" style="--pc:var(${PILLARS[x.pillar].c})">${rich(x.body)}</div></div></div>
    <div class="help"><span><code>## 小標題</code></span><span><code>- 條列</code></span><span><code>☐ 檢核項目</code></span><span><code>| 欄1 | 欄2 |</code> 表格（第一列為表頭）</span><span><code>&gt;&gt; 步驟1 | 步驟2</code> 流程圖</span><span><code>✅ 好的說法</code> <code>❌ 避免</code></span><span><code>!! 紅線警示</code></span><span><code>&gt; 補充說明</code></span><span><code>【待定數值】</code> 黃底標示</span></div>
@@ -540,7 +665,10 @@ function openItem(id,pillar){
     try{ await mutate(dd=>{dd.items=dd.items.filter(i=>i.id!==id);},"刪除卡片："+x.title,{act:"刪除了",kind:PILLARS[x.pillar].short,title:x.title}); closeModal(); toast("已刪除"); }catch(e){writeErr(e)} };
   $("#ef").onsubmit=async ev=>{ ev.preventDefault();
     const d={title:$("#e-title").value.trim(),pillar:$("#e-pillar").value,group:$("#e-group").value.trim()||"未分組",status:$("#e-status").value,order:Number($("#e-order").value)||0,
-      scope:$("#e-scope").value,aud:$("#e-aud").value,level:$("#e-level").value,body:body.value,by:S.uid,at:Date.now()};
+      scope:$("#e-scope").value,level:$("#e-level").value,body:body.value,by:S.uid,at:Date.now()};
+    const chk=n=>[...document.querySelectorAll(`input[name="${n}"]:checked`)].map(i=>i.value);
+    d.stages=chk("e-st"); d.auds=chk("e-au");
+    d.events=[...new Set([...chk("e-ev"),...$("#e-newev").value.split(/[,，、]/).map(s=>s.trim()).filter(Boolean)])];
     if(!d.title){$("#e-msg").textContent="請填標題";return;}
     $("#e-save").disabled=true;
     try{ const nid=id||newId(d.pillar);
@@ -587,9 +715,11 @@ function openIssue(id){
 
 /* ---------- events ---------- */
 document.addEventListener("click",async e=>{
-  const b=e.target.closest("[data-act],[data-jump],[data-go]"); if(!b) return;
+  const b=e.target.closest("[data-act],[data-jump],[data-go],[data-sw],[data-map]"); if(!b) return;
+  if(b.dataset.sw){ S.f[b.dataset.sw]=b.dataset.v; saveSw(); render(); return; }
+  if(b.dataset.map){ S.f.stage=b.dataset.st; saveSw(); location.hash=b.dataset.map; return; }
   if(b.dataset.jump){ e.preventDefault(); document.getElementById(b.dataset.jump)?.scrollIntoView({behavior:"smooth"}); return; }
-  if(b.dataset.go){ e.preventDefault(); const it=S.items.find(i=>i.id===b.dataset.go); if(!it) return; S.f={q:"",scope:"全部",aud:"全部",status:"全部"}; location.hash=it.pillar;
+  if(b.dataset.go){ e.preventDefault(); const it=S.items.find(i=>i.id===b.dataset.go); if(!it) return; S.f.q=""; S.f.status="全部"; if(location.hash.slice(1)!==it.pillar) location.hash=it.pillar; else render();
     setTimeout(()=>{const c=document.getElementById("c-"+it.id); if(c){c.scrollIntoView({behavior:"smooth",block:"center"}); c.classList.add("flash"); setTimeout(()=>c.classList.remove("flash"),1800);}},80); return; }
   const a=b.dataset.act;
   if(a==="edit") openItem(b.dataset.id);
@@ -600,6 +730,7 @@ document.addEventListener("click",async e=>{
   else if(a==="notes"){ const t=b.dataset.t; S.openNotes.has(t)?S.openNotes.delete(t):S.openNotes.add(t); render(); }
   else if(a==="delnote"){ const nid=b.dataset.id; try{ await mutate(d=>{d.notes=d.notes.filter(n=>n.id!==nid);},"刪除留言"); }catch(err){ writeErr(err); } }
   else if(a==="horeset"){ lsSet("ho-done",{}); render(); }
+  else if(a==="swreset"){ Object.assign(S.f,{scope:"全部",stage:"全部",aud:"全部",ev:"全部"}); saveSw(); render(); }
 });
 document.addEventListener("submit",async e=>{
   const f=e.target.closest(".nform"); if(!f) return; e.preventDefault();
@@ -618,14 +749,14 @@ document.addEventListener("input",e=>{
 });
 document.addEventListener("change",e=>{
   const t=e.target;
-  if(t.id==="fs"){S.f.scope=t.value;render();} else if(t.id==="fa"){S.f.aud=t.value;render();} else if(t.id==="fst"){S.f.status=t.value;render();}
-  else if(t.id==="hoa"){S.ho.aud=t.value;lsSet("ho-pref",S.ho);render();} else if(t.id==="hos"){S.ho.scope=t.value;lsSet("ho-pref",S.ho);render();}
+  if(t.id==="fst"){S.f.status=t.value;render();}
   else if(t.dataset.ho){ const d=lsGet("ho-done",{}); if(t.checked) d[t.dataset.ho]=1; else delete d[t.dataset.ho]; lsSet("ho-done",d); render(); }
 });
 document.addEventListener("keydown",e=>{ if(e.key==="Escape"&&$("#modal").innerHTML) closeModal(); });
 function route(){ const h=location.hash.slice(1); S.tab=TABS.some(t=>t[0]===h)?h:"overview"; render(); window.scrollTo(0,0); }
 window.addEventListener("hashchange",route);
-S.ho=Object.assign(S.ho,lsGet("ho-pref",{}));
+function saveSw(){ const f=S.f; lsSet("ohsop-sw",{scope:f.scope,stage:f.stage,aud:f.aud,ev:f.ev}); }
+Object.assign(S.f,lsGet("ohsop-sw",{}));
 route(); boot();
 </script>
 </body>
